@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portfolio-Alberto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    color: black;
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: rgb(194, 184, 9);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+        /* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 228, 27, 0.541);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+}
+nav h1 {
+    font-size: 1.5rem;
+    color: rgb(246, 249, 250);
+}
+nav h1:hover{
+    transform: scale(1.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a:hover {
+    color: rgb(237, 236, 236);
+}
+        /* HOME  */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background-size: cover;
+    padding-top: 120px;
+    background-image: url(fotos/11.jpeg);
+}
+/* background-color:rgb(119, 181, 193); */
+.home-text p{
+    color: beige;
+    font-size: 1.4rem;
+}
+.home-text h1 {
+    color: beige;
+    font-size: 3rem;
+}
+
+.home-text span {
+    color: rgb(242, 255, 0);
+}
+.home-buttons {
+    margin: 25px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    background: transparent;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgb(255, 254, 254);
+    color: #000000;
+}
+
+.socials a {
+    margin-right: 25px;
+    font-size: 1.5rem;
+    color: beige;
+}
+
+.home-img img {
+    float: right;
+    width: 70%;
+    border-radius: 30%;
+    border: 4px solid rgb(37, 69, 75);
+}
+
+        /* ABOUT*/
+#about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #4b3f6e, #4b3f6e);
+    animation: pulse 3s infinite;
+    
+}
+.about-img img{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    width: 100%;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.about-text {
+    flex: 1;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+        /*PROJECTOS*/
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(255, 243, 8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+    text-align: center;
+    padding: 20px;
+}
+.project-card:hover{
+    transform: translateY(-20px);
+}
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+            
+.speciality-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.speciality-box {
+    background: rgb(192, 183, 16);
+    padding: 30px;
+    border-radius: 15px;
+    color: whitesmoke;
+}
+.speciality-box:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px 5px rgb(248, 236, 9);
+}
+
+.speciality-box i {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+}
+
+    
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgb(255, 243, 8);
+    }
+
+        
+footer {
+    background: rgb(255, 243, 8);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+        
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        padding: 10px 8%;
+        font-size: 0.8rem;
+    }  
+    nav h1 {
+        font-size: 1.5rem;
+        margin-right: 5px;
+    }
+   nav ul {
+        gap: 20px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+ h1{
+    width: 28ch;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(28),
+        blinking 0.5s infinite step-end alternate;
+}
+     @keyframes typing {
+            from {
+                width: 0;
+            }
+            
+        }
+        @keyframes blinking {
+            50% { 
+                border-color: transparent
+            }
+            
+        }
+</style>
+<body>
+    <header>
+        <nav>
+            <h1>Alberto</h1>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projectos</a></li>
+                <li><a href="#speciality">Habilidades</a></li>
+                <li><a href="#contact">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="home" class="home">
+        <div class="home-text">
+            <h1><i>Ol&aacute;, chamo-me <span>Alberto Essilamo</i></span></h1>
+            <p>T&eacute;cnico de Suporte Inform&aacute;tico e Web Developer</p>
+
+            <div class="home-buttons">
+                <a href="#contact" class="btn">Contactos</a>
+                <a href="CV.html" class="btn">Ver CV</a>
+            </div>
+
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/alberto-essilamo-79b263434?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/albertoessilamo83-glitch"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/a__l__b__e__r___t__o?igsi=MTg2YjZycTV6YW96NQ=="><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-img">
+            <img src="WhatsApp Image 2026-08-31 at 15.06.29.jpeg">
+        </div>
+        <div class="about-text">
+            <h2><I>Sobre Mim</I></h2>
+            <p>
+                Olá! O meu nome é Alberto Essilamo e sou estudante do Curso Técnico de Informática no ITC.
+                Tenho grande interesse pela área da tecnologia e pelo funcionamento dos computadores e sistemas informáticos.
+Durante a minha formação, tenho desenvolvido conhecimentos em programação, desenvolvimento web, redes informáticas, sistemas operativos e segurança informática. 
+Gosto de aprender novas tecnologias, resolver problemas e colocar em prática os conhecimentos adquiridos.
+O meu objetivo é continuar a desenvolver as minhas competências na área de informática, adquirir experiência e preparar-me para enfrentar novos desafios profissionais no futuro. 
+Sou uma pessoa dedicada, curiosa e motivada para aprender e evoluir constantemente.
+            </p>
+        </div>
+        
+    </section>
+    <section id="projects">
+        <h2>Projectos</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="aa.jpeg" alt="foto dewebsite">
+                <div class="project-overlay">
+                    <h3>Google Website</h3>
+                    <p>Projecto de Cria&ccedil;&atilde;o de um website usando ferramentas da Google</p>
+                    <a class="btn" href="https://sites.google.com/view/just-waves/p%C3%A1gina-inicial?authuser=1">Ver projecto</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="WhatsApp Image 2026-08-31 at 15.06.29.jpeg" alt="Foto do BI">
+                <div class="project-overlay">
+                    <h3>Cria&ccedil;&atilde;o de BI Digital</h3>
+                    <p>Cria&ccedil;&atilde;o de um BI Digital usando HTML e CSS</p>
+                    <a class="btn" href="BI/bilhete de identidade.html">Ver Projecto</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="M.jpeg" alt="Foto de CV">
+                <div class="project-overlay">
+                    <h3>Ceu estrelado HTML</h3>
+                    <p>Criacao de um ceu estrelado usando HTML e CSS </p>
+                    <a class="btn" href="estrelas.html">Ver Projecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speciality">
+        <h2>Habilidades</h2>
+        <div class="speciality-container">
+            <div class="speciality-box">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Design de Web</h3>
+                <p>Cria&ccedil;&atilde;o de Websites Responsivos usando HTML e CSS.</p>
+            </div>
+
+            <div class="speciality-box">
+                <i class="fas fa-network-wired"></i>
+                <h3>Implementa&ccedil;&atilde;cao de Redes</h3>
+                <p>Implementar e Simular redes de forma f&iacute;sica e l&oacute;gica.</p>
+            </div>
+
+            <div class="speciality-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Manunten&ccedil;&atilde;cao de Sistemas</h3>
+                <p>Manunten&ccedil;&atilde;o de Sisitemas Operativos e Softwares de Aplica&ccedil;&atilde;o.</p>
+            </div>
+               <div class="speciality-box">
+                <i class="fas fa-laptop-code"></i>
+                <h3>🛠️ Resolução de problemas </h3>
+                <p>Identificar erros e encontrar soluções para problemas técnicos.</p>
+            </div>
+
+            <div class="speciality-box">
+                <i class="fas fa-network-wired"></i>
+                <h3>🔐 Segurança informática</h3>
+                <p>Proteger sistemas, dados e redes contra ameaças.</p>
+            </div>
+
+            <div class="speciality-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>💻 Manutenção de computadores.</h3>
+                <p> Instalar, configurar e reparar computadores.</p>
+            </div> 
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contactos</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><i class="fa-solid fa-phone"></i> +258 86 762 4766</p>
+                <p><a href="mailto:patricia.macaliche@gmail.com"><i class="fa-solid fa-envelope"></i> albertoessilamo@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/a__l__b__e__r___t__o?igsi=MTg2YjZycTV6YW96NQ=="><i class="fab fa-instagram"></i></a>a__l__b__e__r___t__o?</p>
+                <p><a href="c:\Users\HP\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\540383E744CC06A3A2A36745668412F75EEFCC1D\transfers\2026-37\WhatsApp Image 2026-09-13 at 20.34.34.jpeg"><i class="fa-brands fa-whatsapp"></i> +258 86 762 4766</a></p>          
+            </div>
+
+            <form>
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea rows="5" placeholder="Sua Mensagem"></textarea>
+                <button class="btn" type="submit">Mandar</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>© 2026 Alberto essilamo</p>
+    </footer>
+
+</body>
+</html>
